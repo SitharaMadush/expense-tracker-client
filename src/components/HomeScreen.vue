@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <h1 class="text-orange-400	">Home Page</h1>
+    <h1 class="title">Home Page</h1>
   </div>
 </template>
 
