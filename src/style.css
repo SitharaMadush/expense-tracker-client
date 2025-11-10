@@ -1,0 +1,34 @@
+/* Tailwind v4 import + plugin */
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+
+/* Optional theme tokens */
+@theme {
+  --radius-xl: 0.75rem;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+/* Tell Tailwind what "dark:" means without a config file */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Components — no @apply of custom classes */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium shadow-sm hover:shadow transition;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium shadow-sm hover:shadow transition bg-indigo-600 text-white hover:bg-indigo-700;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium shadow-sm hover:shadow transition bg-transparent hover:bg-gray-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200;
+  }
+  .card {
+    @apply rounded-2xl border border-gray-200 bg-white/70 backdrop-blur p-6 shadow-sm dark:border-slate-800 dark:bg-slate-800/70;
+  }
+  .input {
+    @apply mt-1 block w-full rounded-xl border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 dark:bg-slate-900 dark:text-slate-100 dark:border-slate-700 dark:placeholder-slate-400;
+  }
+  .title {
+    @apply text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-100;
+  }
+}
